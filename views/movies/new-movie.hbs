@@ -1,0 +1,28 @@
+<h2 class="w-50 mx-auto m-5">Create a movie</h2>
+
+
+
+<form action="/movies/create" method="POST" class="w-50 mx-auto m-5">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Title</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="title">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Genre</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="genre">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Plot</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="plot">
+    </div>
+    <div class="mb-3">
+        <label for="cast" class="form-label">Choose a cast</label>
+        <select class="form-control" id="cast" name="cast multiple">
+            {{#each celebrities}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
